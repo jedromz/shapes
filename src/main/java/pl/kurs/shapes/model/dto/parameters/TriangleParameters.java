@@ -1,7 +1,6 @@
 package pl.kurs.shapes.model.dto.parameters;
 
 import lombok.*;
-import pl.kurs.shapes.validation.annotation.Triangle;
 
 @Getter
 @Setter

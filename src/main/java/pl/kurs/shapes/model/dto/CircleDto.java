@@ -12,8 +12,8 @@ import java.time.Instant;
 @NoArgsConstructor
 public class CircleDto extends ShapeDto {
     @Builder
-    public CircleDto(String type, Instant createdAt, Instant updatedAt, Double area, Double perimeter, CircleParameters circleParameters) {
-        super(type, createdAt, updatedAt, area, perimeter);
+    public CircleDto(Long id,String type, Instant createdAt, Instant updatedAt, Double area, Double perimeter, CircleParameters circleParameters) {
+        super(id,type, createdAt, updatedAt, area, perimeter);
         this.circleParameters = circleParameters;
     }
 

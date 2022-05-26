@@ -16,6 +16,7 @@ public class TriangleToTriangleDtoConverter implements Converter<Triangle, Trian
     public TriangleDto convert(MappingContext<Triangle, TriangleDto> mappingContext) {
         Triangle triangle = mappingContext.getSource();
         return TriangleDto.builder()
+                .id(triangle.getId())
                 .type("triangle")
                 .createdAt(triangle.getCreatedAt())
                 .updatedAt(triangle.getUpdatedAt())

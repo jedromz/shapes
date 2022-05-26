@@ -1,17 +1,27 @@
 package pl.kurs.shapes.model;
 
-import lombok.*;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.PositiveOrZero;
 
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
 public class Rectangle extends Shape {
+    @PositiveOrZero(message = "BASE_NON_NEGATIVE")
+    @NotNull(message = "BASE_NOT_NULL")
     private Double base;
+    @PositiveOrZero(message = "HEIGHT_NON_NEGATIVE")
+    @NotNull
+    @NotNull(message = "HEIGHT_NOT_NULL")
     private Double height;
     @Enumerated(value = EnumType.STRING)
     private ShapeType type = ShapeType.RECTANGLE;

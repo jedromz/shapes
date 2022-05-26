@@ -9,7 +9,14 @@ import javax.validation.ConstraintValidatorContext;
 public class TriangleValidator implements ConstraintValidator<Triangle, ITriangleParameters> {
     @Override
     public boolean isValid(ITriangleParameters iTriangleParameters, ConstraintValidatorContext constraintValidatorContext) {
-        return checkSides(iTriangleParameters.getSideA(), iTriangleParameters.getSideB(), iTriangleParameters.getSideC());
+        Double sideA = iTriangleParameters.getSideA();
+        Double sideB = iTriangleParameters.getSideB();
+        Double sideC = iTriangleParameters.getSideC();
+        if (sideA == null || sideB == null || sideC == null) {
+            return true;
+        }
+        return checkSides(sideA, sideB, sideC);
+
     }
 
     private boolean checkSides(Double sideOne, Double sideTwo, Double sideThree) {

@@ -13,6 +13,7 @@ public class RectangleToRectangleDtoConverter implements Converter<Rectangle, Re
     public RectangleDto convert(MappingContext<Rectangle, RectangleDto> mappingContext) {
         Rectangle rectangle = mappingContext.getSource();
         return RectangleDto.builder()
+                .id(rectangle.getId())
                 .createdAt(rectangle.getCreatedAt())
                 .updatedAt(rectangle.getUpdatedAt())
                 .rectangleParameters(new RectangleParameters(rectangle.getBase(), rectangle.getHeight()))

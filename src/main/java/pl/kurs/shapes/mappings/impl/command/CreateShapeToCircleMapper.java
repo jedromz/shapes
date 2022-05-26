@@ -7,7 +7,6 @@ import pl.kurs.shapes.model.Circle;
 import pl.kurs.shapes.model.command.CreateShapeCommand;
 import pl.kurs.shapes.model.command.ShapeParameters;
 
-import javax.validation.constraints.PositiveOrZero;
 import java.util.Optional;
 
 @Service

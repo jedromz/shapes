@@ -4,7 +4,6 @@ import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 import pl.kurs.shapes.mappings.IShapeDtoMapper;
-import pl.kurs.shapes.mappings.IShapeMapper;
 import pl.kurs.shapes.model.Rectangle;
 import pl.kurs.shapes.model.dto.RectangleDto;
 

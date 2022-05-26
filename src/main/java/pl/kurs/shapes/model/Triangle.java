@@ -1,10 +1,14 @@
 package pl.kurs.shapes.model;
 
-import lombok.*;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.PositiveOrZero;
 
 @Entity
@@ -13,10 +17,13 @@ import javax.validation.constraints.PositiveOrZero;
 @NoArgsConstructor
 public class Triangle extends Shape {
     @PositiveOrZero
+    @NotNull(message = "SIDE_A_NOT_NULL")
     private Double sideA;
     @PositiveOrZero
+    @NotNull(message = "SIDE_B_NOT_NULL")
     private Double sideB;
     @PositiveOrZero
+    @NotNull(message = "SIDE_C_NOT_NULL")
     private Double sideC;
     @Enumerated(value = EnumType.STRING)
     private ShapeType type = ShapeType.TRIANGLE;

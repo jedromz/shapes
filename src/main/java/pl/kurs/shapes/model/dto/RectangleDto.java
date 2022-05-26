@@ -5,7 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import pl.kurs.shapes.model.dto.parameters.TriangleParameters;
 
 import java.time.Instant;
 
@@ -18,8 +17,8 @@ public class RectangleDto extends ShapeDto{
     private RectangleParameters rectangleParameters;
 
     @Builder
-    public RectangleDto(String type, Instant createdAt, Instant updatedAt, Double area, Double perimeter, RectangleParameters rectangleParameters) {
-        super(type, createdAt, updatedAt, area, perimeter);
+    public RectangleDto(Long id,String type, Instant createdAt, Instant updatedAt, Double area, Double perimeter, RectangleParameters rectangleParameters) {
+        super(id,type, createdAt, updatedAt, area, perimeter);
         this.rectangleParameters = rectangleParameters;
     }
 

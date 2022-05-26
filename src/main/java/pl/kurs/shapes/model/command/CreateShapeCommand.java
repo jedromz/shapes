@@ -1,9 +1,6 @@
 package pl.kurs.shapes.model.command;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import pl.kurs.shapes.mappings.IShapeCommand;
 
 import javax.validation.Valid;
@@ -13,6 +10,7 @@ import javax.validation.constraints.NotNull;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class CreateShapeCommand implements IShapeCommand {
     @NotNull(message = "TYPE_NOT_NULL")
     private String type;

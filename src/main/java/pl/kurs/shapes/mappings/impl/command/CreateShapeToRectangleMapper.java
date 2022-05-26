@@ -3,10 +3,8 @@ package pl.kurs.shapes.mappings.impl.command;
 import org.springframework.stereotype.Service;
 import pl.kurs.shapes.error.MissingParameterException;
 import pl.kurs.shapes.mappings.IShapeMapper;
-import pl.kurs.shapes.model.Circle;
 import pl.kurs.shapes.model.Rectangle;
 import pl.kurs.shapes.model.command.CreateShapeCommand;
-import pl.kurs.shapes.model.command.ShapeParameters;
 
 import java.util.Optional;
 

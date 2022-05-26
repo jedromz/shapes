@@ -10,9 +10,10 @@ import java.time.Instant;
 @AllArgsConstructor
 @NoArgsConstructor
 public abstract class ShapeDto {
-    String type;
-    Instant createdAt;
-    Instant updatedAt;
-    Double area;
-    Double perimeter;
+    private Long id;
+    private String type;
+    private Instant createdAt;
+    private Instant updatedAt;
+    private Double area;
+    private Double perimeter;
 }

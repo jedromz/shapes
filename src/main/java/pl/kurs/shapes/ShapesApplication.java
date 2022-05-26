@@ -13,11 +13,6 @@ public class ShapesApplication {
     }
 
 }
-//Triangle t = new Triangle;
-//areaParameterFactory(t)
-//post body:{type:triange,"parameters"{...}
-
-//dodac area perimeter
-//testy/
-//jakas funkcjonalonsc
-//security troche
+//pole i obwod robic w liquibase?
+//jak w mockmvc jsonpath sprawdzic czy wartos jest spelnia filtr, np czy dla
+// kazdego obiektu w Page podstawa trojkata jest mneijsza niz 3

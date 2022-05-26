@@ -2,17 +2,12 @@ package pl.kurs.shapes.controller;
 
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
-import org.apache.commons.lang3.StringUtils;
-import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import pl.kurs.shapes.mappings.impl.ShapeMapperFactory;
 import pl.kurs.shapes.model.Shape;
 import pl.kurs.shapes.model.command.CreateShapeCommand;
@@ -44,8 +39,14 @@ public class ShapeController {
     }
 
     @PostMapping("/search")
-    public ResponseEntity<Page<ShapeDto>> getAllShapes(@PageableDefault Pageable pageable, @RequestBody  @Valid SearchCriteriaCommand criteria) {
+    public ResponseEntity<Page<ShapeDto>> getAllShapes(@PageableDefault Pageable pageable, @RequestBody @Valid SearchCriteriaCommand criteria) {
         return ResponseEntity.ok(shapeService.findAll(pageable, criteria)
                 .map(shapeMapperFactory::mapToDto));
+    }
+
+    @GetMapping("/{id}")
+    @SneakyThrows
+    public ResponseEntity<ShapeDto> getShape(@PathVariable Long id) {
+        return ResponseEntity.ok(shapeMapperFactory.mapToDto(shapeService.findById(id)));
     }
 }

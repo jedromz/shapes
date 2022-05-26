@@ -7,6 +7,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
+@Builder
 public class SearchParameters {
     private Double baseFrom;
     private Double baseTo;
