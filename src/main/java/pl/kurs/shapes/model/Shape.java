@@ -1,5 +1,6 @@
 package pl.kurs.shapes.model;
 
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -16,6 +17,7 @@ import java.time.Instant;
 @NoArgsConstructor
 @EntityListeners(AuditingEntityListener.class)
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@EqualsAndHashCode(exclude = "id") // woli zebym wygenerowal sam metody
 public abstract class Shape {
     @Id
     @GeneratedValue(strategy = GenerationType.TABLE)
@@ -24,7 +26,10 @@ public abstract class Shape {
     private Instant createdAt;
     @LastModifiedBy
     private Instant updatedAt;
+    @Version
+    private int version;
 
     public abstract Double getArea();
+
     public abstract Double getPerimeter();
 }

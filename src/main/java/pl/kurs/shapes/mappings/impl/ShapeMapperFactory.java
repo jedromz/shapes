@@ -1,5 +1,6 @@
 package pl.kurs.shapes.mappings.impl;
 
+import pl.kurs.shapes.error.MissingParameterException;
 import pl.kurs.shapes.mappings.IShapeCommand;
 import pl.kurs.shapes.mappings.IShapeDtoMapper;
 import pl.kurs.shapes.mappings.IShapeMapper;
@@ -21,7 +22,7 @@ public class ShapeMapperFactory {
         dtoMappersMap.put(mapper.type(), mapper);
     }
 
-    public Shape map(IShapeCommand command) {
+    public Shape map(IShapeCommand command) throws MissingParameterException {
         return mappersMap.get(command.getType()).map(command);
     }
 

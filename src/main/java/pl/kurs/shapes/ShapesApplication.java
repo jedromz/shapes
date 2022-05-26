@@ -16,3 +16,8 @@ public class ShapesApplication {
 //Triangle t = new Triangle;
 //areaParameterFactory(t)
 //post body:{type:triange,"parameters"{...}
+
+//dodac area perimeter
+//testy/
+//jakas funkcjonalonsc
+//security troche

@@ -19,9 +19,7 @@ public class TriangleToTriangleDtoConverter implements Converter<Triangle, Trian
                 .type("triangle")
                 .createdAt(triangle.getCreatedAt())
                 .updatedAt(triangle.getUpdatedAt())
-                .triangleParameters(new TriangleParameters(triangle.getBase(), triangle.getHeight()))
-                .area(triangle.getArea())
-                .perimeter(triangle.getPerimeter())
+                .triangleParameters(new TriangleParameters(triangle.getSideA(), triangle.getSideB(), triangle.getSideC()))
                 .build();
     }
 }

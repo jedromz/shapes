@@ -1,6 +1,7 @@
 package pl.kurs.shapes.model.dto.parameters;
 
 import lombok.*;
+import pl.kurs.shapes.validation.annotation.Triangle;
 
 @Getter
 @Setter
@@ -8,6 +9,7 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 public class TriangleParameters {
-    private Double base;
-    private Double height;
+    private Double sideA;
+    private Double sideB;
+    private Double sideC;
 }

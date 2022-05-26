@@ -20,6 +20,8 @@ import pl.kurs.shapes.model.command.SearchCriteriaCommand;
 import pl.kurs.shapes.model.dto.ShapeDto;
 import pl.kurs.shapes.service.ShapeService;
 
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping("/shapes")
 @RequiredArgsConstructor
@@ -30,7 +32,7 @@ public class ShapeController {
 
     @PostMapping
     @SneakyThrows
-    public ResponseEntity<Shape> addShape(@RequestBody CreateShapeCommand command) {
+    public ResponseEntity<Shape> addShape(@RequestBody @Valid CreateShapeCommand command) {
 
         //wtedy moglbym uzyc zwyklego mappera, ale jakies to takie brzydkie + jak sie zmienia jakies nazwy to lipa
         //Class<?> cls = Class.forName("StringUtils.capitalize(command.getType() + ".class");");
@@ -42,7 +44,7 @@ public class ShapeController {
     }
 
     @PostMapping("/search")
-    public ResponseEntity<Page<ShapeDto>> getAllShapes(@PageableDefault Pageable pageable, @RequestBody SearchCriteriaCommand criteria) {
+    public ResponseEntity<Page<ShapeDto>> getAllShapes(@PageableDefault Pageable pageable, @RequestBody  @Valid SearchCriteriaCommand criteria) {
         return ResponseEntity.ok(shapeService.findAll(pageable, criteria)
                 .map(shapeMapperFactory::mapToDto));
     }

@@ -18,4 +18,10 @@ public class SearchParameters {
     private Double areaTo;
     private Double perimeterFrom;
     private Double perimeterTo;
+    private Double sideAFrom;
+    private Double sideBFrom;
+    private Double sideCFrom;
+    private Double sideATo;
+    private Double sideBTo;
+    private Double sideCTo;
 }
